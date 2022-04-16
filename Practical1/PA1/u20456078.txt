@@ -1,0 +1,12 @@
+/*Task 7: Simple Query*/
+SELECT * 
+	FROM u20456078_librarysystem.book 
+	WHERE book_genre='Horror Fiction';
+
+/*Task 8: Import command*/
+If on mqsqlworkbench just go to adminstration then data import then same import to new schemma and use the name u20456078_librarysystem 
+ and select the file(PA1.sql)
+ to import and click start import
+if on terminal use  command:
+mysqldump -u username -p u20456078_librarysystem > PA1.sql
+then enter username and password;
