@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    align-content: center;
+
+}
+
+body .nav_style{ text-align: center; background-color: orange}
+
+.nav_style{
+    background-color:orange;
+    padding: 10px 50px;
+}
+
+.nav_buttons {
+    font-family: 'Fira Code Medium';
+    color: white;
+    font-size: 14px;
+    background: orange;
+    padding:10px 40px;
+    margin: 15px;
+    text-decoration:none;
+    letter-spacing:2px;
+    text-transform: uppercase;
+}
+
+.nav_buttons:hover {
+    border:none;
+    background-color: orange;
+    background: white;
+    color: black;
+}
+
+.header{ padding: 0; text-align: center }
+
+.image img { width: 350px; height: 250px; position: absolute }
+
+form {
+
+    width: 100%;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration-color: white;
+}
+
+img.avatar {
+    width: 30%;
+    border-radius: 50%;
+    border: 3px solid orange;
+    margin-top: 1%;
+    margin-left: 32%;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid orange;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: orange;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+.container {
+    background-color: black;
+    padding: 16px;
+}
+
+label{
+    color: white;
+}
+
+
+#formC{
+    height: auto;
+    width: 400px;
+    left: 0%;
+    margin-left: 35%;
+}
+
+h2{
+    text-decoration-color: white;
+}
+
+.error {
+    color: orange;
+    font-size: 90%;
+}
+
+input[type="submit"] {
+    font-size: 110%;
+    font-weight: 100;
+    background: orange;
+    border-color: orange;
+    box-shadow: 0 3px 0 orange;
+    color: #fff;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background: orange;
+}
+
+.loader{
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader.hidden {
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.footer .footer-bottom{
+    background-color: orange;
+}
