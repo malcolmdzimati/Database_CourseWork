@@ -1,0 +1,46 @@
+/*1*/
+SELECT C.Name, COUNT(CC.CustID) AS Rented_Cars 
+	FROM Customer AS C INNER JOIN Customer_Car AS CC
+		ON C.CustomerID=CC.CustID
+    GROUP BY C.CustomerID
+    HAVING Rented_Cars>1;
+    
+/*2*/
+SELECT Type, MIN(YearModel) AS YearModel
+	FROM Motorbikes;
+    
+/*3*/
+SELECT C.* 
+	FROM (Customer AS C INNER JOIN Customer_Bike AS CB
+		ON C.CustomerID=CB.CustID) LEFT JOIN Customer_Car AS CC
+        ON C.CustomerID=CC.CustID
+	WHERE CC.CustID IS NULL;
+    
+/*4*/
+SELECT C.*
+	FROM Customer AS C LEFT JOIN Customer_Car AS CC
+        ON C.CustomerID=CC.CustID
+	WHERE CC.CustID IS NULL;
+    
+/*5*/
+SELECT *
+	FROM Cars
+    WHERE YearModel='2020';
+    
+/*6*/
+SELECT MB.Type
+	FROM (Customer AS C INNER JOIN Customer_Bike AS CB
+		ON C.CustomerID=CB.CustID) INNER JOIN Motorbikes AS MB
+        ON CB.BID=MB.BikeID
+	WHERE C.Surname='Mackenzie' AND MB.YearModel='2020';
+
+/*7*/
+SELECT C.Name
+	FROM (Customer AS C INNER JOIN Customer_Bike AS CB
+            ON C.CustomerID=CB.CustID ) LEFT JOIN Returned_Bike AS RB
+			ON C.CustomerID=RB.CustID
+        WHERE RB.ReturnedDate IS NULL 
+		AND CB.RentedDate=(SELECT RentedDate 
+					FROM Customer_Bike INNER JOIN Motorbikes 
+						ON BID=BikeID
+					WHERE Type='Kawasaki ZX-10R SE');

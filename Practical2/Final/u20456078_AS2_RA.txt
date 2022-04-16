@@ -1,0 +1,12 @@
+/*5*/
+\select_{YearModel='2020'} Cars;
+
+/*6*/
+\project_{Type}(\select_{YearModel='2020' and surname='Mackenzie'}((Customer \join_{CustomerID=CustID}Customer_Bike) 
+													\join_{BikeID=BID} Motorbikes));
+
+/*7*/
+\project_{Name}(\select_{ReturnedDate=null and RentedDate=(\project_{RentedDate}(\select_{Type='Kawasaki ZX-10R SE'}(Motorbikes 
+				\join_{BikeID=BID}Customer_Bike)))}((Customer \join_{CustomerID=Customer_Bike.CustID}Customer_Bike) 
+				\join_{CustomerID=Returned_Bike.CustID} Returned_Bike));
+
